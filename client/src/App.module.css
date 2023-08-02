@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif
+}
+
+body
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 120vh;
+  background-image: url("https://p4.wallpaperbetter.com/wallpaper/330/342/564/sakhalin-husky-heterochromia-animals-dog-wallpaper-preview.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  text-align: center;
+  background-size:cover;
+  background-position: auto;
+}
+
+
+
+
+

@@ -1,0 +1,110 @@
+
+.numbar_text {
+    
+    width: 10%;
+    text-align: center;
+    float: right;
+    padding-top: 20px;
+    color: #ffffff;
+}
+
+.about_section{
+	width: 100%;
+	float: left;
+	;
+	height: auto;
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+.container{
+    text-align: start;
+    margin-right: 50px;
+}
+.about_text{
+	width: 100%;
+	float: left;
+}
+
+.about_taital{
+	width: 100%;
+	float: left;
+	font-size: 50pt;
+	text-align: right;
+
+}
+.about_taital_1{
+  width: 100%;
+  float: left;
+  font-size: 50pt;
+  text-align: right;
+  margin-top: 70px;
+
+}
+
+
+.about{
+	padding-top: 715px;
+}
+
+.magna_text {
+    font-size: 20pt;
+    color: #060401;
+    text-align: right;
+    line-height: 40px;
+    width: 45%;
+    float: right;
+    margin-right: 0px;
+}
+
+.about_bt{
+	width: 100%;
+	float: left;
+}
+
+.more_bt {
+    width: 20%;
+    float: right;
+    background-color: #000;
+    border-radius: 60px;
+    height: 70px;
+    font-size: 20pt;
+    border: 0px;
+    color: #000;
+}
+
+
+.more_bt{
+    padding: 10px 20px;
+    text-decoration: none;
+    position: relative;
+    top: 50px;
+    text-transform: uppercase;
+    border-radius: 8px;
+    font-size: 27px;
+    font-weight: 500;
+    color: #df77b0;
+    text-shadow: 0 7px 4px #00000091;
+    background: transparent;
+    box-shadow: 0 17px 7px #000;
+    border: 2px solid #df77b0;
+    transition: 0.5s ease;
+    user-select: none;
+  }
+  
+  .more_bt:hover,:focus {
+    color: #ffffff;
+    background: #df77b0;
+    border: 1px solid #df77b0;
+    text-shadow: 0 0 5px #ffffff,
+                0 0 10px #ffffff,
+                0 0 20px #ffffff;
+    box-shadow: 0 0 5px #df77b0,
+                0 0 20px #df77b0,
+                0 0 50px #df77b0,
+                0 0 100px #df77b0;
+  }
+  
+
+.magna_text{
+    color: #ffffff;
+}

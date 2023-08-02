@@ -1,0 +1,40 @@
+.nav
+{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+ width: 100%;
+ 
+}
+
+.logo
+{
+  width: 50px;
+  display: flex;
+ 
+  transform: scale(20%);
+}
+
+.nav .ul .li 
+{
+  list-style-type: none;
+  display: flex;
+  padding: 100px;
+}
+.enlace{
+  text-decoration:none ;
+  color:#df77b0;
+  background: #000000a4;
+  padding: 6px 6px;
+  border-radius: 6px;
+  box-shadow: 0 17px 8px #000000a8;
+  margin: 0 20px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+
+.enlace:hover{
+  color: aliceblue;
+  opacity: .7;
+}
