@@ -51,7 +51,9 @@ export default function Detail(props) {
                 { ' '} 
               </h2>
             </div>
+
            
+
             <div className={styles.temperaments}>
               <p className={styles.content}>
                 {detail[0].createdInDB || detail[0].temperaments

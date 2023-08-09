@@ -73,6 +73,7 @@ export default function DogCreation() {
     weight_max: "",
     life_span: "",
     temperament: [],
+    
   });
 
   function handleChange(e) {
@@ -113,7 +114,7 @@ export default function DogCreation() {
       !errors.weight_min &&
       !errors.height_min &&
       !errors.weight_max &&
-      !errors.height_max
+      !errors.height_max 
     ) {
       alert("Your dog has been created successfully");
       dispatch(postDog(input));
@@ -126,6 +127,7 @@ export default function DogCreation() {
         weight_max: "",
         life_span: "",
         temperament: [],
+        
       });
     } else {
       return alert("Something went wrong. Please try again.");
@@ -136,6 +138,63 @@ export default function DogCreation() {
   useEffect(() => {
     dispatch(getTemperamentsList());
   }, [dispatch]);
+
+
+  // NAME
+  if (!input.name) {
+    errors.name = "You must type a name";
+  } else if (!/^[a-zA-Z0-9\s]{1,50}$/.test(input.name)) {
+    errors.name = "Name must be alphanumeric and have a maximum of 50 characters";
+  } else {
+    errors.name = "";
+  }
+
+  // WEIGHTS
+  if (!input.weight_min) {
+    errors.weight_min = "Type a valid minimal weight number";
+  } else if (!/^\d{1,2}$/.test(input.weight_min)) {
+    errors.weight_min = "Weight must have min values. Example: '25'";
+  } else if (input.weight_max && parseInt(input.weight_min) > parseInt(input.weight_max)) {
+    errors.weight_min = "Min weight cannot be higher than max weight";
+  } else {
+    errors.weight_min = "";
+  }
+  if (!input.weight_max) {
+    errors.weight_max = "Type a valid maxim weight number";
+  } else if (!/^\d{1,2}$/.test(input.weight_max)) {
+    errors.weight_max = "Weight must have max values. Example: '25'";
+  } else {
+    errors.weight_max = "";
+  }
+
+  // HEIGHTS
+  if (!input.height_min) {
+    errors.height_min = "Type a valid minimal height number";
+  } else if (!/^\d{1,2}$/.test(input.height_min)) {
+    errors.height_min = "Height must have min values. Example: '25'";
+  } else if (input.height_max && parseInt(input.height_min) > parseInt(input.height_max)) {
+    errors.height_min = "Min height cannot be higher than max height";
+  } else {
+    errors.height_min = "";
+  }
+  if (!input.height_max) {
+    errors.height_max = "Type a valid maxim height number";
+  } else if (!/^\d{1,2}$/.test(input.height_max)) {
+    errors.height_max = "Height must have max values. Example: '25'";
+  } else {
+    errors.height_max = "";
+  }
+
+  if (input.life_span) {
+    const lifeSpanValue = parseInt(input.life_span);
+    if (isNaN(lifeSpanValue) || lifeSpanValue <= 0 || lifeSpanValue > 25) {
+      errors.life_span = "Life span must be a number between 1 and 25";
+    } else {
+      errors.life_span = "";
+    }
+  } else {
+    errors.life_span = "";
+  }
 
 
   return (
@@ -247,7 +306,11 @@ export default function DogCreation() {
                 placeholder="Range..."
                 onChange={(e) => handleChange(e)}
               />
+              <div>
+                <p className={styles.error}>{errors.life_span}</p>
+              </div>
             </div>
+
             <div className={styles.Section}>
               <label className={styles.label}>Temperaments</label>
               <select

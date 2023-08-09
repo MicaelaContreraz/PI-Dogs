@@ -34,6 +34,19 @@ const reqDB = async () => {
       //   },
     },
   });
+  // const dbdog = dbAttributes.map(({dataValues}) => {
+  //   const temperament = dataValues.temperaments.map(({name}) => name).join(', ')
+  //  return {
+  //   id: dataValues.id,
+  //   name: dataValues.name,
+  //   image: dataValues.image,
+  //   life_span:`${dataValues.life_span} years`,
+  //   height: `${dataValues.height_min} - ${dataValues.height_max}`,
+  //   weight: `${dataValues.weight_min} - ${dataValues.weight_max}`,
+  //   temperament
+  // }
+  //})
+  
   return dbAttributes;
 };
 

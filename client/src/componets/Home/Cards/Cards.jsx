@@ -6,12 +6,14 @@ export default function Card({
   id,
   name,
   weight_min,
-  description,
+  
   weight,
   weight_m,
   image,
+  
   temperament,
   temperaments,
+
 }) {
   if (!temperaments) {
     return (
@@ -57,6 +59,8 @@ export default function Card({
                 <h3>
                   {weight} - {weight_m} kg
                 </h3>
+
+               
                 {temperaments ? (
                   <p>{temperaments.map((temp) => `${temp.name}`).join(", ")}</p>
                 ) : (

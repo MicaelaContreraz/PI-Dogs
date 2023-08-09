@@ -147,10 +147,10 @@ export default function Home() {
                   <option defaultValue value="all" hidden>
                     Order by...
                   </option>
-                  <option value="AscendingName">A - Z</option>
-                  <option value="DescendingName">Z - A</option>
-                  <option value="AscendingWeight">Ascending Weight</option>
+                  <option value="AscendingName">filter breed from A to Z</option>
+                  <option value="DescendingName">filter breed from Z to A</option>
                   <option value="DescendingWeight">Descending Weight</option>
+                  <option value="AscendingWeight">Ascending Weight</option>
                 </select>
               </div>
 

@@ -9,28 +9,25 @@ export const orderDogs = (payload, array) => {
       return array.sort((a, b) => {
         return b.name.localeCompare(a.name);
       });
-      case "AscendingWeight":
-        return array.sort((a, b) => {
-
-          const weightA = a.weight.split('-').map(value => parseInt(value))
-          const weightB = b.weight.split('-').map(value => parseInt(value))
-
-        return (
-         Math.floor( ( weightB[0] + weightB[1]) / 2 - (weightA[0] + weightA[1]) / 2)
-        );
-      });
       case "DescendingWeight":
-      return array.sort((a, b) => {
-        
-        const weightA = a.weight.split('-').map(value => parseInt(value))
-        const weightB = b.weight.split('-').map(value => parseInt(value))
+        return array
+          .filter(item => item.weight)
+          .sort((a, b) => {
+            const weightA = parseInt(a.weight.split('-')[1]); // Tomar el valor más alto del rango
+            const weightB = parseInt(b.weight.split('-')[1]); // Tomar el valor más alto del rango
+            return weightB - weightA; // Ordenar en orden descendente por el valor más alto
+          });
 
-      return (
-       Math.floor( ( weightA[0] + weightA[1]) / 2 - (weightB[0] + weightB[1]) / 2)
-      );
-    })
-    default:
-      return array;
+          case "AscendingWeight":
+            return array
+              .filter(item => item.weight)
+              .sort((a, b) => {
+                const weightA = parseInt(a.weight.split('-')[1]); // Tomar el valor más bajo del rango
+                const weightB = parseInt(b.weight.split('-')[1]); // Tomar el valor más bajo del rango
+                return weightA - weightB; // Ordenar en orden ascendente por el valor más bajo
+              });
+          default:
+            return array;
   }
 };
 
